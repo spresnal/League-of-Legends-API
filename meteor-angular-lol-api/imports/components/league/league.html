@@ -1,0 +1,14 @@
+﻿<header>
+    <h1>League of Legends Api</h1>
+</header>
+<body>
+    <button ng-click="$ctrl.getSummonersByNames()">getSummonersByNames</button>
+    <button ng-click="$ctrl.getSummonersByIds()">getSummonersByIds</button>
+    <button ng-click="$ctrl.getSummonersNamesByIds()">getSummonersNamesByIds</button>
+    <button ng-click="$ctrl.getSummonersMasteriesByIds()">getSummonersMasteriesByIds</button>
+    <button ng-click="$ctrl.getSummonersRunesByIds()">getSummonersRunesByIds</button>
+    <li ng-repeat="(key, result) in $ctrl.results">
+        <b>{{key}}:</b>
+        <br>{{result}}
+    </li>
+</body>
