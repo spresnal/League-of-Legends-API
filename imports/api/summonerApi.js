@@ -1,11 +1,10 @@
 ﻿import { Meteor } from 'meteor/meteor';
-
-const apiKey = Meteor.settings.leagueApiKey;
+import '../api/helpers/requestBuilder.js';
 
 Meteor.methods({
     getSummonersByNames: function (v) {
         this.unblock();
-        return Meteor.http.call('GET', 'https://'+v.region+'.api.pvp.net/api/lol/'+v.region+'/v1.4/summoner/by-name/'+v.summoners+'?api_key='+apiKey);
+        return Meteor.http.call('GET', `${buildUrl(v.region, '/summoner/by-name/', v.summoners)}`);
     },
     getSummonersByIds: function (v) {
         this.unblock();
