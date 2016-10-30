@@ -2,12 +2,16 @@
     <h1>League of Legends Api</h1>
 </header>
 
-<div>
+<div style="word-wrap: break-word;">
     <button ng-click="$ctrl.getSummonersByNames()">getSummonersByNames</button>
     <button ng-click="$ctrl.getSummonersByIds()">getSummonersByIds</button>
     <button ng-click="$ctrl.getSummonersNamesByIds()">getSummonersNamesByIds</button>
     <button ng-click="$ctrl.getSummonersMasteriesByIds()">getSummonersMasteriesByIds</button>
     <button ng-click="$ctrl.getSummonersRunesByIds()">getSummonersRunesByIds</button>
+    <button ng-click="$ctrl.getAllChampions()">getAllChampions</button>
+    <button ng-click="$ctrl.getChampionById()">getChampionById</button>
+    <button ng-click="$ctrl.getLeaguesBySummonerNames()">getLeaguesBySummonerNames</button>
+    <button ng-click="$ctrl.getLeagueEntriesBySummonerNames()">getLeagueEntriesBySummonerNames</button>
     <li ng-repeat="(key, result) in $ctrl.results">
         <b>{{key}}:</b>
         <br>{{result}}

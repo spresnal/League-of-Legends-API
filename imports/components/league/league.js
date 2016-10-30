@@ -45,6 +45,35 @@ class LeagueCtrl {
                 $scope.$apply();
             });
         };
+
+        ctrl.getAllChampions = function() {
+            Meteor.call('getAllChampions', {region:selectedRegion}, function(error, results) {
+                console.log(results);
+                ctrl.results = JSON.parse(results.content);
+                $scope.$apply();
+            });
+        };
+
+        ctrl.getChampionById = function() {
+            Meteor.call('getChampionById', {region:selectedRegion, championId:selectedChampionId}, function(error, results) {
+                ctrl.results = JSON.parse(results.content);
+                $scope.$apply();
+            });
+        };
+
+        ctrl.getLeaguesBySummonerNames = function() {
+            Meteor.call('getLeaguesBySummonerNames', {region:selectedRegion, summonerIds:selectedSummonerIds}, function(error, results) {
+                ctrl.results = JSON.parse(results.content);
+                $scope.$apply();
+            });
+        };
+
+        ctrl.getLeagueEntriesBySummonerNames = function() {
+            Meteor.call('getLeagueEntriesBySummonerNames', {region:selectedRegion, summonerIds:selectedSummonerIds}, function(error, results) {
+                ctrl.results = JSON.parse(results.content);
+                $scope.$apply();
+            });
+        };
     }
 }
  
