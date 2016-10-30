@@ -1,8 +1,8 @@
 {
-    "name": "simple-todos",
+    "name": "meteor-angular-lol",
     "private": true,
     "scripts": {
-        "start": "meteor run"
+        "start": "meteor --settings settings.json"
     },
     "dependencies": {
         "angular": "^1.5.3",
