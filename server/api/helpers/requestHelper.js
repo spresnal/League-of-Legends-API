@@ -7,5 +7,12 @@ requestHelper = (function(pub) {
         return `https://${apiRegion}.api.pvp.net/api/lol/${apiRegion}/${apiVersion}${path}?api_key=${apiKey}`
     }
 
+    //callType: GET, PUT, POST etc.
+    //url: Built url ready to be used
+    expose.call = function(callType, url){
+        console.log(`${callType} ${url}`)
+        return Meteor.http.call(callType, url);
+    }
+
     return expose;
 }());
