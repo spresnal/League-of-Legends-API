@@ -61,15 +61,15 @@ class LeagueCtrl {
             });
         };
 
-        ctrl.getLeaguesBySummonerNames = function() {
-            Meteor.call('getLeaguesBySummonerNames', {region:selectedRegion, summonerIds:selectedSummonerIds}, function(error, results) {
+        ctrl.getLeaguesBySummonerIds = function() {
+            Meteor.call('getLeaguesBySummonerIds', {region:selectedRegion, summonerIds:selectedSummonerIds}, function(error, results) {
                 ctrl.results = JSON.parse(results.content);
                 $scope.$apply();
             });
         };
 
-        ctrl.getLeagueEntriesBySummonerNames = function() {
-            Meteor.call('getLeagueEntriesBySummonerNames', {region:selectedRegion, summonerIds:selectedSummonerIds}, function(error, results) {
+        ctrl.getLeagueEntriesBySummonerIds = function() {
+            Meteor.call('getLeagueEntriesBySummonerIds', {region:selectedRegion, summonerIds:selectedSummonerIds}, function(error, results) {
                 ctrl.results = JSON.parse(results.content);
                 $scope.$apply();
             });
