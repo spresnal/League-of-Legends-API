@@ -36,6 +36,6 @@ Meteor.methods({
     // Return Value: int
     createTournament: function (v) {
         this.unblock();
-        return requestHelper.call('GET', requestHelper.buildFullUrl(`/tournament/public/${apiVersion}/team/${v.teamIds}`));
+        return requestHelper.call('POST', requestHelper.buildFullUrl(`/tournament/public/${apiVersion}/team/${v.teamIds}`));
     }
 });
