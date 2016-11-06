@@ -5,7 +5,7 @@ Meteor.methods({
     // GET /api/lol/{region}/v2.5/league/by-summoner/{summonerIds} Get leagues mapped by summoner ID for a given list of summoner IDs. (REST)
     // Return Value: Map[string, List[LeagueDto]]
     getLeaguesBySummonerIds: function (v) {
-        // this.unblock();
+        this.unblock();
         return requestHelper.call('GET', requestHelper.buildUrl(apiVersion, `/league/by-summoner/${v.summonerIds}`));
     },
     // GET /api/lol/{region}/v2.5/league/by-summoner/{summonerIds}/entry Get league entries mapped by summoner ID for a given list of summoner IDs. (REST)
