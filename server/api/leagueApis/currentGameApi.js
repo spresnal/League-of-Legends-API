@@ -4,6 +4,6 @@ Meteor.methods({
     // Return Value: CurrentGameInfo
     getGameInfoBySummonerId: function (v) {
         this.unblock();
-        return requestHelper.call('GET', requestHelper.buildFullUrl(`/observer-mode/rest/consumer/getSpectatorGameInfo/${v.region}/${v.summonerId}`));
+        return requestHelper.call('GET', requestHelper.buildFullUrl(`/observer-mode/rest/consumer/getSpectatorGameInfo/${requestHelper.region}/${v.summonerId}`));
     }
 });
