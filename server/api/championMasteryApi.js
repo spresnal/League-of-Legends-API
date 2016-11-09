@@ -1,5 +1,3 @@
-const apiVersion = "v1.2";
-
 // championmastery
 Meteor.methods({
     // GET /championmastery/location/{location}/player/{playerId}/champion/{championId} Get a champion mastery by player id and champion id. Response code 204 means there were no masteries found for given player id or player id and champion id combination. (RPC)
