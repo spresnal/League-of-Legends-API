@@ -1,6 +1,8 @@
 // lol-status-v1.0
 Meteor.methods({
     // GET /shards Get shard list. (REST)
+    // Return Value: List[Shard]
+    getShards: function () {
         this.unblock();
         return requestHelper.call('GET', requestHelper.buildUrl(`/shards`));
     },
