@@ -1,20 +1,51 @@
-﻿<header>
-    <h1>League of Legends Api</h1>
-</header>
-
-<div style="word-wrap: break-word;">
-    <button ng-click="$ctrl.getSummonersByNames()">getSummonersByNames</button>
-    <button ng-click="$ctrl.getSummonersByIds()">getSummonersByIds</button>
-    <button ng-click="$ctrl.getSummonersNamesByIds()">getSummonersNamesByIds</button>
-    <button ng-click="$ctrl.getSummonersMasteriesByIds()">getSummonersMasteriesByIds</button>
-    <button ng-click="$ctrl.getSummonersRunesByIds()">getSummonersRunesByIds</button>
-    <button ng-click="$ctrl.getAllChampions()">getAllChampions</button>
-    <button ng-click="$ctrl.getChampionById()">getChampionById</button>
-    <button ng-click="$ctrl.getLeaguesBySummonerIds()">getLeaguesBySummonerIds</button>
-    <button ng-click="$ctrl.getLeagueEntriesBySummonerIds()">getLeagueEntriesBySummonerIds</button>
-    <button ng-click="$ctrl.updateSummonerRegion()">updateSummonerRegion</button>
-    <li ng-repeat="(key, result) in $ctrl.results">
-        <b>{{key}}:</b>
-        <br>{{result}}
-    </li>
-</div>
+﻿<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <title>League of Legends Api</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.5/css/bootstrap-select.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.5/js/bootstrap-select.min.js"></script>
+    </head>
+    <body ng-app="league">
+        <div class="container">
+            <form class="form-signin">
+                <h2 class="form-signin-heading">League of Legends Info</h2>
+                <select
+                    ng-model="$ctrl.region" 
+                    ng-options="r.toUpperCase() for r in regions"
+                    ng-change="$ctrl.updateSummonerRegion()">
+                </select>
+                <input type="text" id="summonerName" class="form-control" placeholder="Summoner Name" ng-model="$ctrl.summonerName">
+                <input type="text" id="summonerName" class="form-control" placeholder="Summoner Id" ng-model="$ctrl.summonerId">
+                <div class="row">
+                    <div class="col-md-4"><button class="btn btn-block btn-primary" ng-click="$ctrl.getSummonersByNames()">getSummonersByNames</button></div>
+                    <div class="col-md-4"><button class="btn btn-block btn-primary" ng-click="$ctrl.getSummonersByIds()">getSummonersByIds</button></div>
+                    <div class="col-md-4"><button class="btn btn-block btn-primary" ng-click="$ctrl.getSummonersNamesByIds()">getSummonersNamesByIds</button></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"><button class="btn btn-block btn-primary" ng-click="$ctrl.getSummonersMasteriesByIds()">getSummonersMasteriesByIds</button></div>
+                    <div class="col-md-4"><button class="btn btn-block btn-primary" ng-click="$ctrl.getSummonersRunesByIds()">getSummonersRunesByIds</button></div>
+                    <div class="col-md-4"><button class="btn btn-block btn-primary" ng-click="$ctrl.getAllChampions()">getAllChampions</button></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"><button class="btn btn-block btn-primary" ng-click="$ctrl.getChampionById()">getChampionById</button></div>
+                    <div class="col-md-4"><button class="btn btn-block btn-primary" ng-click="$ctrl.getLeaguesBySummonerIds()">getLeaguesBySummonerIds</button></div>
+                    <div class="col-md-4"><button class="btn btn-block btn-primary" ng-click="$ctrl.getLeagueEntriesBySummonerIds()">getLeagueEntriesBySummonerIds</button></div>
+                </div>
+                <ul>
+                    Selected region:{{$ctrl.region}}
+                </ul>
+                <ul ng-repeat="(key, result) in $ctrl.results">
+                    <b>{{key}}:</b>
+                    <br>{{result}}
+                </ul>
+                <div>
+            </form>
+        </div>
+    </body>
+</html>

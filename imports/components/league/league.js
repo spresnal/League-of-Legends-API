@@ -6,48 +6,45 @@ import template from './league.html';
 class LeagueCtrl {
     constructor($scope) {
         var ctrl = this;
-
-        var selectedSummonerNames = 'Phroggen, Calactic Gock';
-        var selectedSummonerIds = '60239169, 23521773';
-        var selectedRegion = 'na';
+        $scope.regions = ['br', 'eune', 'euw', 'jp', 'kr', 'lan', 'las', 'na', 'oce', 'ru', 'tr']
         
         ctrl.getSummonersByNames = function() {
-            Meteor.call('getSummonersByNames', {region:selectedRegion, summoners:selectedSummonerNames}, function(error, results) {
+            Meteor.call('getSummonersByNames', {region:ctrl.region, summoners:ctrl.summonerName}, function(error, results) {
                 ctrl.results = JSON.parse(results.content);
                 $scope.$apply();
             });
         };
 
         ctrl.getSummonersByIds = function() {
-            Meteor.call('getSummonersByIds', {region:selectedRegion, summonerIds:selectedSummonerIds}, function(error, results) {
+            Meteor.call('getSummonersByIds', {region:ctrl.region, summonerIds:ctrl.summonerId}, function(error, results) {
                 ctrl.results = JSON.parse(results.content);
                 $scope.$apply();
             });
         };
 
         ctrl.getSummonersNamesByIds = function() {
-            Meteor.call('getSummonersNamesByIds', {region:selectedRegion, summonerIds:selectedSummonerIds}, function(error, results) {
+            Meteor.call('getSummonersNamesByIds', {region:ctrl.region, summonerIds:ctrl.summonerId}, function(error, results) {
                 ctrl.results = JSON.parse(results.content);
                 $scope.$apply();
             });
         };
 
         ctrl.getSummonersMasteriesByIds = function() {
-            Meteor.call('getSummonersMasteriesByIds', {region:selectedRegion, summonerIds:selectedSummonerIds}, function(error, results) {
+            Meteor.call('getSummonersMasteriesByIds', {region:ctrl.region, summonerIds:ctrl.summonerId}, function(error, results) {
                 ctrl.results = JSON.parse(results.content);
                 $scope.$apply();
             });
         };
 
         ctrl.getSummonersRunesByIds = function() {
-            Meteor.call('getSummonersRunesByIds', {region:selectedRegion, summonerIds:selectedSummonerIds}, function(error, results) {
+            Meteor.call('getSummonersRunesByIds', {region:ctrl.region, summonerIds:ctrl.summonerId}, function(error, results) {
                 ctrl.results = JSON.parse(results.content);
                 $scope.$apply();
             });
         };
 
         ctrl.getAllChampions = function() {
-            Meteor.call('getAllChampions', {region:selectedRegion}, function(error, results) {
+            Meteor.call('getAllChampions', {region:ctrl.region}, function(error, results) {
                 console.log(results);
                 ctrl.results = JSON.parse(results.content);
                 $scope.$apply();
@@ -55,29 +52,29 @@ class LeagueCtrl {
         };
 
         ctrl.getChampionById = function() {
-            Meteor.call('getChampionById', {region:selectedRegion, championId:selectedChampionId}, function(error, results) {
+            Meteor.call('getChampionById', {region:ctrl.region, championId:selectedChampionId}, function(error, results) {
                 ctrl.results = JSON.parse(results.content);
                 $scope.$apply();
             });
         };
 
         ctrl.getLeaguesBySummonerIds = function() {
-            Meteor.call('getLeaguesBySummonerIds', {region:selectedRegion, summonerIds:selectedSummonerIds}, function(error, results) {
+            Meteor.call('getLeaguesBySummonerIds', {region:ctrl.region, summonerIds:ctrl.summonerId}, function(error, results) {
                 ctrl.results = JSON.parse(results.content);
                 $scope.$apply();
             });
         };
 
         ctrl.getLeagueEntriesBySummonerIds = function() {
-            Meteor.call('getLeagueEntriesBySummonerIds', {region:selectedRegion, summonerIds:selectedSummonerIds}, function(error, results) {
+            Meteor.call('getLeagueEntriesBySummonerIds', {region:ctrl.region, summonerIds:ctrl.summonerId}, function(error, results) {
                 ctrl.results = JSON.parse(results.content);
                 $scope.$apply();
             });
         };
 
         ctrl.updateSummonerRegion = function() {
-            // calls this with dummy param for now
-            Meteor.call('updateSummonerRegion', "TEST");
+            Meteor.call('updateSummonerRegion', ctrl.region);
+            console.log(ctrl.region)
         };
     }
 }
