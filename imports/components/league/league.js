@@ -74,6 +74,11 @@ class LeagueCtrl {
                 $scope.$apply();
             });
         };
+
+        ctrl.updateSummonerRegion = function() {
+            // calls this with dummy param for now
+            Meteor.call('updateSummonerRegion', "TEST");
+        };
     }
 }
  

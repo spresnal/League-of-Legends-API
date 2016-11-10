@@ -1,20 +1,18 @@
-requestHelper = (function(pub) { 
+requestHelper = (function() { 
     const apiKey = Meteor.settings.leagueApiKey;
-    var apiRegion = "na",
-        expose = {};
+    var expose = {};
 
-    expose.setRegion = function(newRegion){
-        apiRegion = newRegion;
-    }
+    // Default to NA
+    expose.apiRegion = "na";
 
     // Builder for most commonly used url base
     expose.buildUrl = function(apiVersion, path){
-        return `https://${apiRegion}.api.pvp.net/api/lol/${apiRegion}/${apiVersion}${path}?api_key=${apiKey}`;
+        return `https://${expose.apiRegion}.api.pvp.net/api/lol/${expose.apiRegion}/${apiVersion}${path}?api_key=${apiKey}`;
     }
 
     // Builder for uncommon url
     expose.buildFullUrl = function(path){
-        return `https://${apiRegion}.api.pvp.net${path}?api_key=${apiKey}`;
+        return `https://${expose.apiRegion}.api.pvp.net${path}?api_key=${apiKey}`;
     }
 
     // callType: GET, PUT, POST etc.
@@ -27,3 +25,10 @@ requestHelper = (function(pub) {
 
     return expose;
 }());
+
+Meteor.methods({
+    updateSummonerRegion: function (region) {
+        requestHelper.apiRegion = region;
+        console.log(requestHelper.apiRegion);
+    }
+});
