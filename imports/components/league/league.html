@@ -17,7 +17,7 @@
                 <h2 class="form-signin-heading">League of Legends Info</h2>
                 <select
                     ng-model="$ctrl.region" 
-                    ng-options="r.toUpperCase() for r in regions"
+                    ng-options="r.toUpperCase() for r in $ctrl.regions"
                     ng-change="$ctrl.updateSummonerRegion()">
                 </select>
                 <input type="text" id="summonerName" class="form-control" placeholder="Summoner Name" ng-model="$ctrl.summonerName">
