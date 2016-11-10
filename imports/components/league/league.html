@@ -13,38 +13,72 @@
     </head>
     <body ng-app="league">
         <div class="container">
-            <form class="form-signin">
+            <form class="form-horizontal">
                 <h2 class="form-signin-heading">League of Legends Info</h2>
-                <select
-                    ng-model="$ctrl.region" 
-                    ng-options="r.toUpperCase() for r in $ctrl.regions"
-                    ng-change="$ctrl.updateSummonerRegion()">
-                </select>
-                <input type="text" id="summonerName" class="form-control" placeholder="Summoner Name" ng-model="$ctrl.summonerName">
-                <input type="text" id="summonerName" class="form-control" placeholder="Summoner Id" ng-model="$ctrl.summonerId">
-                <div class="row">
+
+                <hr>
+
+                <h4>Fill in appropriate options</h4>
+                <div class="form-group">
+                    <label for="region" class="col-sm-2 control-label">Region</label>
+                    <div class="col-md-2">
+                        <select
+                            id="region"
+                            class="form-control"
+                            ng-model="$ctrl.region" 
+                            ng-options="r.toUpperCase() for r in $ctrl.regions"
+                            ng-change="$ctrl.updateSummonerRegion()">
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="summonerName" class="col-sm-2 control-label">Summoner Names</label>
+                    <div class="col-md-5">
+                        <input type="text" id="summonerName" class="form-control" placeholder="Phroggen, Gordita God" ng-model="$ctrl.summonerName">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="summonerId" class="col-sm-2 control-label">Summoner Ids</label>
+                    <div class="col-md-5">
+                        <input type="text" id="summonerIds" class="form-control" placeholder="23521773, 23468627, 60239169" ng-model="$ctrl.summonerId">
+                    </div>
+                </div>
+
+                <hr>
+
+                <h4>Select an API call</h4>
+                <div class="row top-buffer">
                     <div class="col-md-4"><button class="btn btn-block btn-primary" ng-click="$ctrl.getSummonersByNames()">getSummonersByNames</button></div>
                     <div class="col-md-4"><button class="btn btn-block btn-primary" ng-click="$ctrl.getSummonersByIds()">getSummonersByIds</button></div>
                     <div class="col-md-4"><button class="btn btn-block btn-primary" ng-click="$ctrl.getSummonersNamesByIds()">getSummonersNamesByIds</button></div>
                 </div>
-                <div class="row">
+                <div class="row top-buffer">
                     <div class="col-md-4"><button class="btn btn-block btn-primary" ng-click="$ctrl.getSummonersMasteriesByIds()">getSummonersMasteriesByIds</button></div>
                     <div class="col-md-4"><button class="btn btn-block btn-primary" ng-click="$ctrl.getSummonersRunesByIds()">getSummonersRunesByIds</button></div>
                     <div class="col-md-4"><button class="btn btn-block btn-primary" ng-click="$ctrl.getAllChampions()">getAllChampions</button></div>
                 </div>
-                <div class="row">
+                <div class="row top-buffer">
                     <div class="col-md-4"><button class="btn btn-block btn-primary" ng-click="$ctrl.getChampionById()">getChampionById</button></div>
                     <div class="col-md-4"><button class="btn btn-block btn-primary" ng-click="$ctrl.getLeaguesBySummonerIds()">getLeaguesBySummonerIds</button></div>
                     <div class="col-md-4"><button class="btn btn-block btn-primary" ng-click="$ctrl.getLeagueEntriesBySummonerIds()">getLeagueEntriesBySummonerIds</button></div>
                 </div>
-                <ul>
-                    Selected region:{{$ctrl.region}}
-                </ul>
-                <ul ng-repeat="(key, result) in $ctrl.results">
-                    <b>{{key}}:</b>
-                    <br>{{result}}
-                </ul>
-                <div>
+
+                <hr>
+
+                <div class="row top-buffer">
+                    <div class="col-md-12">
+                        <table class="table table-bordered table-hover table-condensed">
+                            <tr>
+                                <th>Key</th>
+                                <th>Result</th>
+                            </tr>
+                            <tr ng-repeat="(key, result) in $ctrl.results">
+                                <td>{{key}}</td>
+                                <td>{{result}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             </form>
         </div>
     </body>
