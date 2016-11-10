@@ -74,7 +74,6 @@ class LeagueCtrl {
 
         ctrl.updateSummonerRegion = function() {
             Meteor.call('updateSummonerRegion', ctrl.region);
-            console.log(ctrl.region)
         };
     }
 }
