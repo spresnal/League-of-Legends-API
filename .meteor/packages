@@ -20,3 +20,4 @@ autopublish@1.0.7             # Publish all data to the clients (for prototyping
 angular-templates
 http@1.2.10
 shell-server
+practicalmeteor:mocha
