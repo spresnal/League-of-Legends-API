@@ -18,8 +18,10 @@ You need git to clone the repository. You can get git from http://git-scm.com/. 
   ```
 
 ## Running Unit Tests
+Reference [meteor testing](https://guide.meteor.com/testing.html) for general information about testing meteor. In addition, check out the meteor package [practicalmeteor:mocha](https://atmospherejs.com/practicalmeteor/mocha) and [mocha](https://github.com/mochajs/mocha) for information about the test framework. To read about unit testing syntax go to [chai](http://chaijs.com/api/bdd/).
+
 1. Use the command 
   ```
   meteor test --driver-package practicalmeteor:mocha
   ```
-2. Open http://www.localhost:3000 in your web-browser. Refresh the page to run the tests again.
+2. Open [localhost:3000](localhost:3000) in your web-browser. Refresh the page to run the tests again.
