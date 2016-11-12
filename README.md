@@ -22,4 +22,4 @@ You need git to clone the repository. You can get git from http://git-scm.com/. 
   ```
   meteor test --driver-package practicalmeteor:mocha
   ```
-2. Open http://localhost:3000 in your web-browser. Refresh the page to run the tests again.
+2. Open http://www.localhost:3000 in your web-browser. Refresh the page to run the tests again.
