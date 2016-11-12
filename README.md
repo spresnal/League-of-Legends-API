@@ -16,3 +16,7 @@ You need git to clone the repository. You can get git from http://git-scm.com/. 
   ```
   npm start
   ```
+
+## Running Unit Tests
+1. Use the command `meteor test --driver-package practicalmeteor:mocha`
+2. Open http://localhost:3000 in your web-browser. Refresh the page to run the tests again.
