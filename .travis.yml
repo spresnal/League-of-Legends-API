@@ -8,4 +8,4 @@ before_install:
 - meteor npm install
 services: mongodb
 script:
-- spacejam test --driver-package practicalmeteor:mocha 
+- spacejam test --driver-package practicalmeteor:mocha-console-runner
