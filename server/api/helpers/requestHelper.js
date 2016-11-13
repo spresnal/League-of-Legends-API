@@ -5,14 +5,27 @@ requestHelper = (function() {
     // Default to NA
     expose.apiRegion = "na";
 
+    expose.pathIsValid = function(path){
+        // Path must start with a '/' and be followed by characters
+        var pathFormat = '^\/.+';
+        if(path.match(pathFormat))
+            return path;
+        console.log('Error: Improperly formatted path');
+        return null;
+    };
+
     // Builder for most commonly used url base
     expose.buildUrl = function(apiVersion, path){
-        return `https://${expose.apiRegion}.api.pvp.net/api/lol/${expose.apiRegion}/${apiVersion}${path}?api_key=${apiKey}`;
+        if(expose.pathIsValid(path))
+            return `https://${expose.apiRegion}.api.pvp.net/api/lol/${expose.apiRegion}/${apiVersion}${path}?api_key=${apiKey}`;
+        return null;
     }
 
     // Builder for uncommon url
     expose.buildFullUrl = function(path){
-        return `https://${expose.apiRegion}.api.pvp.net${path}?api_key=${apiKey}`;
+        if(expose.pathIsValid(path))
+            return `https://${expose.apiRegion}.api.pvp.net${path}?api_key=${apiKey}`;
+        return null;
     }
 
     // callType: GET, PUT, POST etc.
