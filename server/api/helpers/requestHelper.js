@@ -8,9 +8,10 @@ requestHelper = (function() {
     expose.pathIsValid = function(path){
         // Path must start with a '/' and be followed by characters
         var pathFormat = '^\/.+';
-        if(path.match(pathFormat))
+                console.log(`path: ${path}`);
+        if(path && path.match(pathFormat))
             return path;
-        console.log('Error: Improperly formatted path');
+        console.log(`Error: Improperly formatted path: ${path}`);
         return null;
     };
 

@@ -43,6 +43,18 @@ describe('requestHelper', function () {
             // assert
             expect(result).to.equal(`https://na.api.pvp.net/api/lol/na/${apiVersion}${testPath}?api_key=undefined`);
         });
+
+        it('returns null when null path passed in', function () {
+            // arrange
+            var apiVersion = 'v1.0',
+                testPath = null;
+
+            // act
+            var result = requestHelper.buildUrl(apiVersion, testPath);
+
+            // assert
+            expect(result).to.be.null;
+        });
     });
 
     describe('buildFullUrl', function () {
@@ -55,6 +67,31 @@ describe('requestHelper', function () {
 
             // assert
             expect(result).to.equal(`https://na.api.pvp.net${testPath}?api_key=undefined`);
+        });
+
+        it('returns null when null path passed in', function () {
+            // arrange
+            var apiVersion = 'v1.0',
+                testPath = null;
+
+            // act
+            var result = requestHelper.buildFullUrl(apiVersion, testPath);
+
+            // assert
+            expect(result).to.be.null;
+        });
+    });
+
+    describe('Meteor updateSummonerRegion', function () {
+        it('succesfully sets the passed in region', function () {
+            // arrange
+            var testRegion = 'test';
+
+            // act
+            Meteor.call('updateSummonerRegion', testRegion);
+
+            // assert
+            expect(requestHelper.apiRegion).to.equal(testRegion);
         });
     });
 })
