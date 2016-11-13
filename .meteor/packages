@@ -19,5 +19,5 @@ ecmascript@0.5.9              # Enable ECMAScript2015+ syntax in app code
 autopublish@1.0.7             # Publish all data to the clients (for prototyping)
 angular-templates
 http@1.2.10
-shell-server
+shell-server@0.2.1
 practicalmeteor:mocha

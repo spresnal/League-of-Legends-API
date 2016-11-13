@@ -4,6 +4,7 @@ node_js:
 - '0.12'
 before_install:
 - curl https://install.meteor.com/ | sh
+- npm install -g spacejam
 services: mongodb
 script:
-- meteor test --driver-package practicalmeteor:mocha 
+- spacejam test --driver-package practicalmeteor:mocha 
