@@ -1,4 +1,6 @@
 import { expect } from 'meteor/practicalmeteor:chai';
+import { sinon } from 'meteor/practicalmeteor:sinon';
+
 import '/server/api/helpers/requestHelper.js';
 
 describe('requestHelper', function () {
@@ -82,7 +84,52 @@ describe('requestHelper', function () {
         });
     });
 
+    describe('call', function () {
+        afterEach(function(){
+            Meteor.http.call.restore();
+        });
+
+        it('GET: succesfully uses Meteors built in http call', function () {
+            // arrange
+            var stub = sinon.stub(Meteor.http, 'call'),
+                protocol = 'GET',
+                testPath = 'http://www.testPath.com';
+
+            // act
+            requestHelper.call(protocol, testPath);
+
+            // assert
+            expect(stub.calledOnce).to.be.true;
+            expect(stub.calledWith(protocol, testPath)).to.be.true;
+        });
+
+        it('POST: succesfully uses Meteors built in http call', function () {
+            // arrange
+            var stub = sinon.stub(Meteor.http, 'call'),
+                protocol = 'POST',
+                testPath = 'http://www.testPath.com',
+                body = 'test';
+
+            // act
+            requestHelper.call(protocol, testPath, body);
+
+            // assert
+            expect(stub.calledOnce).to.be.true;
+            expect(stub.calledWith(protocol, testPath, body)).to.be.true;
+        });
+    });
+
     describe('Meteor updateSummonerRegion', function () {
+        var region;
+
+        beforeEach(function(){
+            region = requestHelper.apiRegion;
+        });
+
+        afterEach(function(){
+            requestHelper.apiRegion = region;
+        });
+
         it('succesfully sets the passed in region', function () {
             // arrange
             var testRegion = 'test';

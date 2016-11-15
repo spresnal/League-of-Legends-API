@@ -8,7 +8,6 @@ requestHelper = (function() {
     expose.pathIsValid = function(path){
         // Path must start with a '/' and be followed by characters
         var pathFormat = '^\/.+';
-                console.log(`path: ${path}`);
         if(path && path.match(pathFormat))
             return path;
         console.log(`Error: Improperly formatted path: ${path}`);
@@ -43,6 +42,5 @@ requestHelper = (function() {
 Meteor.methods({
     updateSummonerRegion: function (region) {
         requestHelper.apiRegion = region;
-        console.log(requestHelper.apiRegion);
     }
 });
