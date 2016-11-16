@@ -1,11 +1,11 @@
-﻿import { angular } from 'angular';
-import { angularMeteor } from 'angular-meteor';
- 
-import { template } from './league.html';
+﻿'use strict';
+
+import angular from 'angular';
+import angularMeteor from 'angular-meteor';
+import template  from './league.html';
  
 class LeagueCtrl {
     constructor($scope) {
-        'use strict';
         var ctrl = this;
 
         ctrl.region = 'na';

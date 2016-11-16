@@ -1,3 +1,5 @@
+'use strict';
+
 // lol-status-v1.0
 Meteor.methods({
     // GET /shards Get shard list. (REST)

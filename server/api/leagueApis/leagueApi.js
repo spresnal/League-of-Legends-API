@@ -1,3 +1,5 @@
+'use strict';
+
 const apiVersion = "v2.5";
 
 // league-v2.5
@@ -28,13 +30,13 @@ Meteor.methods({
     },
     // GET /api/lol/{region}/v2.5/league/challenger Get challenger tier leagues. (REST)
     // Return Value: LeagueDto
-    getChallengerLeagues: function (v) {
+    getChallengerLeagues: function () {
         this.unblock();
         return requestHelper.call('GET', requestHelper.buildUrl(apiVersion, `/league/challenger`));
     },
     // GET /api/lol/{region}/v2.5/league/master Get master tier leagues. (REST)
     // Return Value: LeagueDto
-    getMasterLeagues: function (v) {
+    getMasterLeagues: function () {
         this.unblock();
         return requestHelper.call('GET', requestHelper.buildUrl(apiVersion, `/league/master`));
     }

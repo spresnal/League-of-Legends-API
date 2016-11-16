@@ -1,4 +1,6 @@
-﻿const apiVersion = "v1.4";
+﻿'use strict';
+
+const apiVersion = "v1.4";
 
 // summoner-v1.4
 Meteor.methods({

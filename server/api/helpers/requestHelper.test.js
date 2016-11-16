@@ -1,3 +1,5 @@
+'use strict';
+
 import { expect } from 'meteor/practicalmeteor:chai';
 import { sinon } from 'meteor/practicalmeteor:sinon';
 

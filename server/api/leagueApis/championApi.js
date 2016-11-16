@@ -1,4 +1,6 @@
-﻿const apiVersion = "v1.2";
+﻿'use strict';
+
+const apiVersion = "v1.2";
 
 // champion-v1.2
 Meteor.methods({

@@ -1,4 +1,6 @@
-﻿const apiVersion = "v1";
+﻿'use strict';
+
+const apiVersion = "v1";
 
 // tournament-provider-v1
 Meteor.methods({

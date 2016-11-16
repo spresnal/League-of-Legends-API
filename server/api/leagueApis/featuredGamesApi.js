@@ -1,3 +1,5 @@
+'use strict';
+
 // featured-games-v1.0
 Meteor.methods({
     // GET /observer-mode/rest/featured Get list of featured games. (REST)

@@ -1,3 +1,5 @@
+'use strict';
+
 // current-game-v1.0
 Meteor.methods({
     // GET /observer-mode/rest/consumer/getSpectatorGameInfo/{platformId}/{summonerId} Get current game information for the given summoner ID. (REST)
