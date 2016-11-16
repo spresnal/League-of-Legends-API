@@ -5,6 +5,7 @@ import { template } from './league.html';
  
 class LeagueCtrl {
     constructor($scope) {
+        'use strict';
         var ctrl = this;
 
         ctrl.region = 'na';
