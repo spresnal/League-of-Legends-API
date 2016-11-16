@@ -1,7 +1,7 @@
-﻿import angular from 'angular';
-import angularMeteor from 'angular-meteor';
+﻿import { angular } from 'angular';
+import { angularMeteor } from 'angular-meteor';
  
-import template from './league.html';
+import { template } from './league.html';
  
 class LeagueCtrl {
     constructor($scope) {
