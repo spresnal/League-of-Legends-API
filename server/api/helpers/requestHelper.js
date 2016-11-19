@@ -1,6 +1,6 @@
 'use strict';
 
-var requestHelper = (function() { 
+requestHelper = (function() { 
     const apiKey = Meteor.settings.leagueApiKey;
     var expose = {};
 
