@@ -1,6 +1,5 @@
 requestHelper = (function() { 
-    'use strict';
-    
+    'use strict';   
     const apiKey = Meteor.settings.leagueApiKey;
     var expose = {};
 
@@ -49,6 +48,7 @@ requestHelper = (function() {
 
 Meteor.methods({
     updateSummonerRegion: function (region) {
+        'use strict';
         requestHelper.apiRegion = region;
     }
 });

@@ -30,7 +30,7 @@ Meteor.methods({
     },
     // POST /tournament/public/v1/provider Creates a tournament provider and returns its ID. (REST)
     // Return Value: int
-    createTournamentProvider: function (v) {
+    createTournamentProvider: function () {
         this.unblock();
         return requestHelper.call('POST', requestHelper.buildUrl(apiVersion, `/tournament/public/${apiVersion}/provider`));
     },

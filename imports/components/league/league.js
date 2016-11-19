@@ -2,7 +2,7 @@
 
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
-import template  from './league.html';
+import './league.html';
  
 class LeagueCtrl {
     constructor($scope) {
@@ -55,7 +55,7 @@ class LeagueCtrl {
         };
 
         ctrl.getChampionById = function() {
-            Meteor.call('getChampionById', {championId:selectedChampionId}, function(error, results) {
+            Meteor.call('getChampionById', {championId:1}, function(error, results) {
                 ctrl.results = JSON.parse(results.content);
                 $scope.$apply();
             });

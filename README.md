@@ -18,11 +18,21 @@ You need git to clone the repository. You can get git from http://git-scm.com/. 
   ```
 
 ## Testing
-Reference [meteor testing](https://guide.meteor.com/testing.html) for general information about testing meteor. In addition, check out the meteor package [practicalmeteor:mocha](https://atmospherejs.com/practicalmeteor/mocha) and [mocha](https://github.com/mochajs/mocha) for information about the test framework. To read about unit testing syntax go to [chai](http://chaijs.com/api/bdd/).
+Reference [meteor testing](https://guide.meteor.com/testing.html) for general information about testing meteor. In addition, check out the meteor package [dispatch:mocha-phantomjs](https://atmospherejs.com/dispatch/mocha-phantomjs) and [mocha](https://github.com/mochajs/mocha) for information about the test framework. To read about unit testing syntax go to [chai](http://chaijs.com/api/bdd/).
 
 ###Running the unit test suite
-1. Use the command 
+* Use the command 
   ```
-  meteor test --driver-package practicalmeteor:mocha
+  npm run test
   ```
-2. Open [localhost:3000](localhost:3000) in your web-browser. Refresh the page to run the tests again.
+  or 
+  ```
+  npm run test:watch
+  ```
+  (auto runs the tests after making updates)
+
+###Running the linter
+* Use the command
+  ```
+  npm run linter
+  ```
