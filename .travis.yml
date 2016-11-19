@@ -4,7 +4,7 @@ node_js:
 - '0.12'
 before_install:
 - curl https://install.meteor.com/ | sh
-- npm install -g spacejam
+- npm install -g spacejam@rc
 install:
 - meteor npm install
 services: mongodb
