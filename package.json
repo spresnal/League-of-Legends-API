@@ -2,7 +2,9 @@
   "name": "meteor-angular-lol",
   "private": true,
   "scripts": {
-    "start": "meteor --settings settings.json"
+    "start": "meteor --settings settings.json",
+    "test": "meteor test --once --driver-package dispatch:mocha-phantomjs",
+    "test:watch": "TEST_WATCH=1 meteor test --driver-package dispatch:mocha-phantomjs"
   },
   "dependencies": {
     "angular": "^1.5.8",
