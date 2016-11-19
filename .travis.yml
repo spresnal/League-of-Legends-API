@@ -9,4 +9,4 @@ install:
 - meteor npm install
 services: mongodb
 script:
-- spacejam test --driver-package practicalmeteor:mocha-console-runner
+- spacejam test --driver-package=practicalmeteor:mocha-console-runner --loglevel trace
