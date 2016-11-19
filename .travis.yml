@@ -8,5 +8,5 @@ install:
 - meteor npm install
 services: mongodb
 script:
-- npm run test
 - npm run linter
+- npm run test
