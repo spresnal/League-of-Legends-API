@@ -26,6 +26,6 @@ Meteor.methods({
     // Note: Count parameter is optional. Defaults to 3 if not present.
     getSpecifiedChampionMasterEntriesByPlayerId: function (v) {
         this.unblock();
-        return requestHelper.call('GET', requestHelper.buildFullUrl(`/championmastery/location/${requestHelper.apiRegion}/player/${v.playerId}/topchampions${v.count ? `?count=${v.count}` : ''}`));
+        return requestHelper.call('GET', requestHelper.buildFullUrl(`/championmastery/location/${requestHelper.apiRegion}/player/${v.playerId}/topchampions`) + (v.count ? `&count=${v.count}` : ''));
     }
 });
