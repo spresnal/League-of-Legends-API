@@ -121,7 +121,7 @@ describe('requestHelper', function () {
         });
     });
 
-    describe('Meteor updateSummonerRegion', function () {
+    describe('updateSummonerRegion', function () {
         var region;
 
         beforeEach(function(){
@@ -143,4 +143,4 @@ describe('requestHelper', function () {
             expect(requestHelper.apiRegion).to.equal(testRegion);
         });
     });
-})
+});
