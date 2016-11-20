@@ -1,4 +1,4 @@
-# league-of-legends-seed — the seed for League of Legends apps
+# league-of-legends-seed [![Build Status](https://travis-ci.org/spresnal/league-of-legends-seed.svg?branch=Basic-Setup)](https://travis-ci.org/spresnal/league-of-legends-seed) — the seed for League of Legends apps
 This project is an application skeleton for a typical League of Legends web app. You can use it to quickly bootstrap your webapp project.
 
 Built using <b>Meteor 1.4.2</b> and <b>AngularJS 1.5.8</b>. The seed contains calls for all League of Legends REST endpoints <i>(incomplete)</i>.
