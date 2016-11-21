@@ -10,3 +10,7 @@ services: mongodb
 script:
 - npm run linter
 - npm run test
+cache:
+  bundler: true
+  directories:
+  - node_modules
