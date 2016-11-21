@@ -52,10 +52,10 @@ describe('championMasteryApi', function () {
         });
     });
 
-    describe('getSpecifiedChampionMasterEntriesByPlayerId', function () {
+    describe('getSpecifiedChampionMasteryEntriesByPlayerId', function () {
         it('succesfully builds the url - without count', function () {
             // act
-            Meteor.call('getSpecifiedChampionMasterEntriesByPlayerId', {playerId: 1337});
+            Meteor.call('getSpecifiedChampionMasteryEntriesByPlayerId', {playerId: 1337});
 
             // assert
             expect(stub.calledOnce).to.be.true;
@@ -65,7 +65,7 @@ describe('championMasteryApi', function () {
 
         it('succesfully builds the url - with count', function () {
             // act
-            Meteor.call('getSpecifiedChampionMasterEntriesByPlayerId', {playerId: 1337, count: 10});
+            Meteor.call('getSpecifiedChampionMasteryEntriesByPlayerId', {playerId: 1337, count: 10});
 
             // assert
             expect(stub.calledOnce).to.be.true;

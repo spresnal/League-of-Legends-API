@@ -1,7 +1,7 @@
 # league-of-legends-seed [![Build Status](https://travis-ci.org/spresnal/league-of-legends-seed.svg?branch=Basic-Setup)](https://travis-ci.org/spresnal/league-of-legends-seed) — the seed for League of Legends apps
 This project is an application skeleton for a typical League of Legends web app. You can use it to quickly bootstrap your webapp project.
 
-Built using <b>Meteor 1.4.2</b> and <b>AngularJS 1.5.8</b>. The seed contains calls for all League of Legends REST endpoints <i>(incomplete)</i>.
+Built using <b>Meteor 1.4.2</b> and <b>AngularJS 1.5.8</b>. The seed contains calls for all League of Legends REST endpoints.
 
 ## Prerequisites
 You need git to clone the repository. You can get git from http://git-scm.com/. You must have node.js and its package manager (npm) installed. You can get them from http://nodejs.org/. Once you have npm, you need to install Meteor version 1.4.2 found here https://www.meteor.com/. Lastly, install the project dependencies by running `meteor npm install` from the project directory.
@@ -36,3 +36,33 @@ Reference [meteor testing](https://guide.meteor.com/testing.html) for general in
   ```
   npm run linter
   ```
+
+## API Calls <i>(Only Listing Tested Methods)</i>
+### championApi
++ getAllChampions
++ getChampionById
+
+### championMasteryApi
++ getChampionMasteryByPlayerIdAndChampionId
++ getAllChampionMasteriesByPlayerId
++ getTotalChampionMasteryScoreByPlayerId
++ getSpecifiedChampionMasterEntriesByPlayerId
+  - without count
+  - with count
+
+### currentGameApi
++ getGameInfoBySummonerId
+
+### featuredGamesApi
++ getFeaturedGames
+
+### gameApi
++ getRecentGamesBySummonerId
+
+### leagueApi
++ getLeaguesBySummonerIds
++ getLeagueEntriesBySummonerIds
++ getLeaguesByTeamIds
++ getLeagueEntriesByTeamIds
++ getChallengerLeagues
++ getMasterLeagues
