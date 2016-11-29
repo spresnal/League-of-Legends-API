@@ -6,12 +6,12 @@ Meteor.methods({
     // Return Value: List[Shard]
     getShards: function () {
         this.unblock();
-        return requestHelper.call('GET', requestHelper.buildUrl(`/shards`));
+        return requestHelper.call('GET', requestHelper.buildFullUrl(`/shards`));
     },
     // GET /shards/{shard} Get shard status. Returns the data available on the status.leagueoflegends.com website for the given region. (REST)
     // Return Value: ShardStatus
     getShardStatusById: function (v) {
         this.unblock();
-        return requestHelper.call('GET', requestHelper.buildFullUrl(`/shards/${v.shard}`));
+        return requestHelper.call('GET', requestHelper.buildFullUrl(`/shards/${v.shardId}`));
     }
 });

@@ -8,7 +8,7 @@ Meteor.methods({
     // Return Value: Map[string, SummonerDto]
     getSummonersByNames: function (v) {
         this.unblock();
-        return requestHelper.call('GET', requestHelper.buildUrl(apiVersion, `/summoner/by-name/${v.summoners}`));
+        return requestHelper.call('GET', requestHelper.buildUrl(apiVersion, `/summoner/by-name/${v.summonerNames}`));
     },
     // GET /api/lol/{region}/v1.4/summoner/{summonerIds} Get summoner objects mapped by summoner ID for a given list of summoner IDs. (REST)
     // Return Value: Map[string, SummonerDto]
