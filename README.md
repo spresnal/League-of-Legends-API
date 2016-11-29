@@ -66,3 +66,24 @@ Reference [meteor testing](https://guide.meteor.com/testing.html) for general in
 + getLeagueEntriesByTeamIds
 + getChallengerLeagues
 + getMasterLeagues
+
+### lolStatusApi
++ getShards
++ getShardStatusById
+
+### matchApi
++ getMatchById
+
+### matchListApi
++ getMatchListBySummonerId
+
+### statsApi
++ getRankedStatsBySummonerId
++ getPlayerStatsBySummonerId
+
+### summonerApi
++ getSummonersByNames
++ getSummonersByIds
++ getSummonersNamesByIds
++ getSummonersMasteriesByIds
++ getSummonersRunesByIds
