@@ -6,9 +6,9 @@ const apiVersion = "v1.2";
 Meteor.methods({
     // GET /api/lol/{region}/v1.2/champion Retrieve all champions. (REST)
     // Return Value: ChampionListDto
-    getAllChampions: function () {
+    getAllChampions: function (v) {
         this.unblock();
-        return requestHelper.call('GET', requestHelper.buildUrl(apiVersion, `/champion`));
+        return requestHelper.call('GET', requestHelper.buildUrl(apiVersion, `/champion`, v ? v.optionalParams : null));
     },
     // GET /api/lol/{region}/v1.2/champion/{id} Retrieve champion by ID. (REST)
     // Return Value: ChampionDto

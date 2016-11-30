@@ -18,19 +18,19 @@ requestHelper = (function() {
     };
 
     // Builder for most commonly used url base
-    expose.buildUrl = function(apiVersion, path){
+    expose.buildUrl = function(apiVersion, path, optionalParams){
         if(expose.pathIsValid(path))
         {
-            return `https://${expose.apiRegion}.api.pvp.net/api/lol/${expose.apiRegion}/${apiVersion}${path}?api_key=${apiKey}`;
+            return appendOptionalParameters(`https://${expose.apiRegion}.api.pvp.net/api/lol/${expose.apiRegion}/${apiVersion}${path}?api_key=${apiKey}`, optionalParams);
         }
         return null;
     };
 
     // Builder for uncommon url
-    expose.buildFullUrl = function(path){
+    expose.buildFullUrl = function(path, optionalParams){
         if(expose.pathIsValid(path))
         {
-            return `https://${expose.apiRegion}.api.pvp.net${path}?api_key=${apiKey}`;
+            return appendOptionalParameters(`https://${expose.apiRegion}.api.pvp.net${path}?api_key=${apiKey}`, optionalParams);
         }
         return null;
     };
@@ -42,6 +42,18 @@ requestHelper = (function() {
         console.log(`${callType} ${url}`);
         return Meteor.http.call(callType, url, body);
     };
+
+    // private method
+    var appendOptionalParameters = function(path, keyValueUrlParams){
+        if(keyValueUrlParams){
+            for(var key in keyValueUrlParams){
+                if(keyValueUrlParams.hasOwnProperty(key)){
+                    path += `&${key}=${keyValueUrlParams[key]}`;
+                }
+            }
+        }
+        return path;
+    }
 
     return expose;
 }());

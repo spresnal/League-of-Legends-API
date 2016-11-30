@@ -17,7 +17,7 @@ describe('championApi', function () {
     });
 
     describe('getAllChampions', function () {
-        it('succesfully builds the url', function () {
+        it('succesfully builds the url - without freeToPlay', function () {
             // act
             Meteor.call('getAllChampions');
 
@@ -25,6 +25,16 @@ describe('championApi', function () {
             expect(stub.calledOnce).to.be.true;
             expect(stub.getCall(0).args[0]).to.equal('GET');
             expect(stub.getCall(0).args[1]).to.equal('https://na.api.pvp.net/api/lol/na/v1.2/champion?api_key=undefined');
+        });
+
+        it('succesfully builds the url - with freeToPlay', function () {
+            // act
+            Meteor.call('getAllChampions', {optionalParams: {freeToPlay: true}});
+
+            // assert
+            expect(stub.calledOnce).to.be.true;
+            expect(stub.getCall(0).args[0]).to.equal('GET');
+            expect(stub.getCall(0).args[1]).to.equal('https://na.api.pvp.net/api/lol/na/v1.2/champion?api_key=undefined&freeToPlay=true');
         });
     });
 
