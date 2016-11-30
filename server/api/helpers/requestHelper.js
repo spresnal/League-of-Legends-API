@@ -53,8 +53,8 @@ requestHelper = (function() {
             }
         }
         return path;
-    }
-
+    };
+    
     return expose;
 }());
 
