@@ -6,6 +6,8 @@ const apiVersion = "v1.2";
 Meteor.methods({
     // GET /api/lol/{region}/v1.2/champion Retrieve all champions. (REST)
     // Return Value: ChampionListDto
+    //
+    // Note: freeToPlay (bool) is optional
     getAllChampions: function (v) {
         this.unblock();
         return requestHelper.call('GET', requestHelper.buildUrl(apiVersion, `/champion`, v ? v.optionalParams : null));

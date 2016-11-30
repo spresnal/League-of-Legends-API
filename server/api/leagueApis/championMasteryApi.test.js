@@ -65,7 +65,7 @@ describe('championMasteryApi', function () {
 
         it('succesfully builds the url - with count', function () {
             // act
-            Meteor.call('getSpecifiedChampionMasteryEntriesByPlayerId', {playerId: 1337, count: 10});
+            Meteor.call('getSpecifiedChampionMasteryEntriesByPlayerId', {playerId: 1337, optionalParams:{count: 10}});
 
             // assert
             expect(stub.calledOnce).to.be.true;

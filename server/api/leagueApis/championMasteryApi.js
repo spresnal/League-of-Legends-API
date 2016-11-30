@@ -23,9 +23,9 @@ Meteor.methods({
     // GET /championmastery/location/{location}/player/{playerId}/topchampions Get specified number of top champion mastery entries sorted by number of champion points descending (RPC)
     // Return Value: List[ChampionMasteryDTO]
     //
-    // Note: Count parameter is optional. Defaults to 3 if not present.
+    // Note: Count (int) parameter is optional. Defaults to 3 if not present.
     getSpecifiedChampionMasteryEntriesByPlayerId: function (v) {
         this.unblock();
-        return requestHelper.call('GET', requestHelper.buildFullUrl(`/championmastery/location/${requestHelper.apiRegion}/player/${v.playerId}/topchampions`) + (v.count ? `&count=${v.count}` : ''));
+        return requestHelper.call('GET', requestHelper.buildFullUrl(`/championmastery/location/${requestHelper.apiRegion}/player/${v.playerId}/topchampions`, v.optionalParams));
     }
 });
