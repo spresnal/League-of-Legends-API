@@ -40,6 +40,8 @@ Reference [meteor testing](https://guide.meteor.com/testing.html) for general in
 ## API Calls <i>(Only Listing Tested Methods)</i>
 ### championApi
 + getAllChampions
+  - without freeToPlay
+  - with freeToPlay
 + getChampionById
 
 ### championMasteryApi
@@ -87,3 +89,7 @@ Reference [meteor testing](https://guide.meteor.com/testing.html) for general in
 + getSummonersNamesByIds
 + getSummonersMasteriesByIds
 + getSummonersRunesByIds
+
+### teamApi
++ getTeamsBySummonerIds
++ getTeamsByTeamIds
